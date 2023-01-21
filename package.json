@@ -1,0 +1,32 @@
+{
+  "name": "abon-api",
+  "version": "1.0.0",
+  "description": "Absensi Online API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zgramming/ABON-API.git"
+  },
+  "keywords": [
+    "Express"
+  ],
+  "author": "Zeffry Reynando",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zgramming/ABON-API/issues"
+  },
+  "homepage": "https://github.com/zgramming/ABON-API#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.15",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "ts-node": "^10.9.1"
+  }
+}
