@@ -1,18 +1,15 @@
 import express from "express";
-import formidable from "formidable";
+import settingUserRouter from "./src/router/setting/user_router";
 
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
-const form = formidable({ multiples: true });
+// const form = formidable({ multiples: true });
 const router = express.Router();
 
-// Auth
-
 router.post("/login", async (req, res) => {
-  return res.status(200).json({ message: "Login Success" });
+  return res.json({ success: true, data: "Login" });
 });
-router.post("/register", async (req, res) => {});
 router.post("/logout", async (req, res) => {});
+router.post("/register", async (req, res) => {});
+
+router.use("/setting/user", settingUserRouter);
 
 export default router;
