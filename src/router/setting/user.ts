@@ -3,10 +3,10 @@ import { body } from "express-validator";
 
 import { UserController } from "../../controller/setting/user_controller";
 
-const userRouter = express.Router();
+const router = express.Router();
 
-userRouter.get(`/`, UserController.getUsers);
-userRouter.post(
+router.get(`/`, UserController.getUsers);
+router.post(
   `/`,
   [
     body("app_group_user_id").notEmpty(),
@@ -17,8 +17,8 @@ userRouter.post(
   ],
   UserController.createUsers
 );
-userRouter.put(
-  `:id`,
+router.put(
+  `/:id`,
   body("id").notEmpty(),
   body("app_group_user_id").notEmpty(),
   body("name").notEmpty(),
@@ -27,11 +27,11 @@ userRouter.put(
   body("password").notEmpty(),
   UserController.updateUsers
 );
-userRouter.put(
+router.put(
   `/update_name/:id`,
   body("name").isEmpty(),
   UserController.updateNameUsers
 );
-userRouter.delete(`:id`, UserController.deleteUsers);
+router.delete(`/:id`, UserController.deleteUsers);
 
-export default userRouter;
+export default router;
